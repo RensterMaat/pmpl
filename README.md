@@ -4,6 +4,8 @@
 
 `pmpl` (Pretty Matplotlib) is a Python library that provides clean, consistent styling for matplotlib plots. Perfect for creating client-ready visualizations in Jupyter notebooks with just a few lines of code.
 
+![Style Comparison](docs/images/example_comparison.png)
+
 ## Features
 
 - 🎨 **Pre-configured styles** for common plot types (horizontal, vertical, base)
@@ -98,6 +100,138 @@ pmpl.set_defaults('vertical')
 All styles include presentation-ready defaults:
 - Clean Arial font
 - Optimized DPI (95) for screen display
+- Subtle gridlines (30% opacity)
+- No tick marks on gridded axes
+- Frameless legends
+- Titles and labels sized for readability
+
+## More Examples
+
+### Horizontal Bar Chart with Custom Colors
+
+![Horizontal Bar Chart](docs/images/example_horizontal.png)
+
+```python
+import pmpl
+import matplotlib.pyplot as plt
+
+categories = ['Engineering', 'Marketing', 'Sales', 'Operations', 'HR']
+headcount = [45, 23, 67, 34, 12]
+
+with pmpl.style('horizontal'):
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.barh(categories, headcount, color='steelblue')
+    ax.set_xlabel('Number of Employees')
+    ax.set_title('Headcount by Department')
+    plt.tight_layout()
+    plt.show()
+```
+
+### Time Series Line Chart
+
+![Vertical Line Chart](docs/images/example_vertical.png)
+
+```python
+import pmpl
+import matplotlib.pyplot as plt
+import numpy as np
+
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+revenue = [120, 135, 142, 158, 171, 185]
+costs = [80, 85, 90, 95, 100, 105]
+
+with pmpl.style('vertical'):
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.plot(months, revenue, marker='o', linewidth=2, label='Revenue', color='seagreen')
+    ax.plot(months, costs, marker='s', linewidth=2, label='Costs', color='coral')
+    ax.set_ylabel('Amount ($M)')
+    ax.set_title('Revenue vs Costs - H1 2024')
+    ax.legend()
+    plt.tight_layout()
+    plt.show()
+```
+
+### Multiple Subplots with Different Styles
+
+```python
+import pmpl
+import matplotlib.pyplot as plt
+
+data_q = ['Q1', 'Q2', 'Q3', 'Q4']
+sales = [100, 120, 140, 160]
+growth = [5, 8, 12, 15]
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
+
+# Left plot - horizontal style
+ax1.barh(data_q, sales, color='mediumpurple')
+ax1.set_xlabel('Sales ($M)')
+ax1.set_title('Quarterly Sales')
+pmpl.format_horizontal(ax1)
+
+# Right plot - vertical style
+ax2.bar(data_q, growth, color='coral')
+ax2.set_ylabel('Growth Rate (%)')
+ax2.set_title('Quarterly Growth')
+pmpl.format_vertical(ax2)
+
+plt.tight_layout()
+plt.show()
+```
+
+### Scatter Plot with Base Style
+
+```python
+import pmpl
+import matplotlib.pyplot as plt
+import numpy as np
+
+np.random.seed(42)
+x = np.random.randn(100)
+y = 2 * x + np.random.randn(100) * 0.5
+
+with pmpl.style('base'):
+    fig, ax = plt.subplots(figsize=(8, 6))
+    ax.scatter(x, y, alpha=0.6, s=50, color='dodgerblue')
+    ax.set_xlabel('Feature X')
+    ax.set_ylabel('Feature Y')
+    ax.set_title('Correlation Analysis')
+    # Use both gridlines for scatter plots
+    ax.grid(True, axis='both', alpha=0.3)
+    plt.tight_layout()
+    plt.show()
+```
+
+### Combining Multiple Datasets
+
+![Grouped Bar Chart](docs/images/example_grouped.png)
+
+```python
+import pmpl
+import matplotlib.pyplot as plt
+
+regions = ['North', 'South', 'East', 'West']
+q1 = [45, 38, 52, 41]
+q2 = [48, 42, 55, 44]
+q3 = [52, 45, 58, 47]
+
+x = range(len(regions))
+width = 0.25
+
+with pmpl.style('vertical'):
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.bar([i - width for i in x], q1, width, label='Q1', color='#1f77b4')
+    ax.bar(x, q2, width, label='Q2', color='#ff7f0e')
+    ax.bar([i + width for i in x], q3, width, label='Q3', color='#2ca02c')
+
+    ax.set_ylabel('Sales ($M)')
+    ax.set_title('Regional Sales Performance')
+    ax.set_xticks(x)
+    ax.set_xticklabels(regions)
+    ax.legend()
+    plt.tight_layout()
+    plt.show()
+```
 - Subtle gridlines (30% opacity)
 - No tick marks on gridded axes
 - Frameless legends
