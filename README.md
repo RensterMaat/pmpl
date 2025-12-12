@@ -78,6 +78,22 @@ import pmpl
 pmpl.set_defaults('vertical')
 ```
 
+## Documentation
+
+Full documentation is available in the `docs/` folder. Build it locally with:
+
+```bash
+cd docs
+uv run sphinx-build -b html . _build/html
+```
+
+Then open `docs/_build/html/index.html` in your browser.
+
+The documentation includes:
+- **API Reference** - Complete function and class documentation
+- **Examples** - Common use cases and patterns
+- **Module Guides** - Deep dives into styles, formatters, and core
+
 ## Available Styles
 
 ### `horizontal`
@@ -310,6 +326,10 @@ uv run pytest
 
 # Run tests with coverage
 uv run pytest --cov=pmpl --cov-report=term-missing
+
+# Build documentation
+cd docs
+uv run sphinx-build -b html . _build/html
 
 # Run example notebook
 jupyter lab examples/test_pmpl.ipynb
