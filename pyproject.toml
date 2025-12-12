@@ -39,8 +39,23 @@ Changelog = "https://github.com/RensterMaat/pmpl/blob/main/CHANGELOG.md"
 packages = ["src/pmpl"]
 
 [project.optional-dependencies]
+docs = [
+    "sphinx>=8.2.3",
+    "sphinx-autodoc-typehints>=3.5.2",
+    "sphinx-rtd-theme>=3.0.2",
+    "myst-parser>=4.0.1",
+]
 test = [
-    "numpy>=1.26.0",
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+]
+dev = [
+    "hatchling>=1.28.0",
+    "ipykernel>=7.1.0",
+    "jupyter>=1.1.1",
+    "pre-commit>=4.5.0",
+    "python-semantic-release>=10.5.2",
+    "ruff>=0.14.9",
 ]
 
 [dependency-groups]
