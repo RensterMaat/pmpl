@@ -30,6 +30,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/RensterMaat/pmpl"
+Documentation = "https://pmpl.readthedocs.io"
 Repository = "https://github.com/RensterMaat/pmpl"
 Issues = "https://github.com/RensterMaat/pmpl/issues"
 Changelog = "https://github.com/RensterMaat/pmpl/blob/main/CHANGELOG.md"
