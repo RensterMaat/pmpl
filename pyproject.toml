@@ -1,7 +1,9 @@
 [project]
 name = "pmpl"
 version = "0.1.0"
-description = "Add your description here"
+description = "Plotting templates for matplotlib"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "matplotlib>=3.10.8",
+]
