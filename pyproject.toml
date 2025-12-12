@@ -26,11 +26,10 @@ version_toml = ["pyproject.toml:project.version"]
 branch = "main"
 build_command = "uv build"
 commit_message = "chore: release v{version}"
-commit_parser = "angular"
+commit_parser = "conventional"
 tag_format = "v{version}"
 
 [tool.semantic_release.changelog]
-template_dir = "templates"
 changelog_file = "CHANGELOG.md"
 exclude_commit_patterns = []
 
