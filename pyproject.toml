@@ -5,13 +5,34 @@ build-backend = "hatchling.build"
 [project]
 name = "pmpl"
 version = "0.0.0"
-description = "Plotting templates for matplotlib"
+description = "Pretty Matplotlib - Create presentation-ready plots with minimal effort"
 readme = "README.md"
 requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+    {name = "Rens ter Maat", email = "rens.termaat@gmail.com"}
+]
+keywords = ["matplotlib", "plotting", "visualization", "presentation", "styling"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Typing :: Typed",
+]
 dependencies = [
     "matplotlib>=3.10.8",
     "numpy>=2.3.5",
 ]
+
+[project.urls]
+Homepage = "https://github.com/RensterMaat/pmpl"
+Repository = "https://github.com/RensterMaat/pmpl"
+Issues = "https://github.com/RensterMaat/pmpl/issues"
+Changelog = "https://github.com/RensterMaat/pmpl/blob/main/CHANGELOG.md"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/pmpl"]
