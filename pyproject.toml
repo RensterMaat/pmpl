@@ -61,17 +61,22 @@ dev = [
 
 [tool.semantic_release]
 version_toml = ["pyproject.toml:project.version"]
-branch = "main"
 build_command = "uv build"
-commit_message = "chore: release v{version}"
-commit_parser = "conventional"
-tag_format = "v{version}"
 major_on_zero = false
 allow_zero_version = true
 
+[tool.semantic_release.commit_parser_options]
+allowed_tags = ["feat", "fix", "docs", "chore", "ci", "refactor", "test", "perf", "build", "style"]
+minor_tags = ["feat"]
+patch_tags = ["fix", "perf"]
+
 [tool.semantic_release.changelog]
-changelog_file = "CHANGELOG.md"
+template_dir = "templates"
 exclude_commit_patterns = []
+
+[tool.semantic_release.changelog.default_templates]
+changelog_file = "CHANGELOG.md"
+commit_message = "chore: release v{version}"
 
 [tool.semantic_release.branches.main]
 match = "main"
