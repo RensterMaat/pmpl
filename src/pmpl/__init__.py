@@ -31,8 +31,6 @@ from .core import BASE_STYLE, HORIZONTAL_STYLE, STYLES, VERTICAL_STYLE
 from .formatters import format_base, format_horizontal, format_vertical
 from .styles import set_defaults, style
 
-__version__ = "0.0.0"
-
 __all__ = [
     # Context managers and style setters
     "style",
