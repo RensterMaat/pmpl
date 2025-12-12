@@ -1,7 +1,7 @@
 # pmpl - Pretty Matplotlib
 
 [![Tests](https://github.com/RensterMaat/pmpl/workflows/Tests/badge.svg)](https://github.com/RensterMaat/pmpl/actions/workflows/test.yml)
-[![Documentation](https://github.com/RensterMaat/pmpl/workflows/Documentation/badge.svg)](https://github.com/RensterMaat/pmpl/actions/workflows/docs.yml)
+[![Documentation Status](https://readthedocs.org/projects/pmpl/badge/?version=latest)](https://pmpl.readthedocs.io/en/latest/?badge=latest)
 [![codecov](https://codecov.io/gh/RensterMaat/pmpl/branch/main/graph/badge.svg)](https://codecov.io/gh/RensterMaat/pmpl)
 [![PyPI version](https://badge.fury.io/py/pmpl.svg)](https://badge.fury.io/py/pmpl)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
@@ -87,7 +87,16 @@ pmpl.set_defaults('vertical')
 
 ## Documentation
 
-Full documentation is available in the `docs/` folder. Build it locally with:
+📚 **Full documentation is available at [pmpl.readthedocs.io](https://pmpl.readthedocs.io/)**
+
+The documentation includes:
+- **API Reference** - Complete function and class documentation
+- **Examples** - Common use cases and patterns
+- **Module Guides** - Deep dives into styles, formatters, and core
+
+### Build Locally
+
+You can also build the documentation locally:
 
 ```bash
 cd docs
