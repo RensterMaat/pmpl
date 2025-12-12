@@ -18,7 +18,9 @@ packages = ["src"]
 [dependency-groups]
 dev = [
     "hatchling>=1.28.0",
+    "pre-commit>=4.5.0",
     "python-semantic-release>=10.5.2",
+    "ruff>=0.14.9",
 ]
 
 [tool.semantic_release]
@@ -38,3 +40,30 @@ exclude_commit_patterns = []
 [tool.semantic_release.branches.main]
 match = "main"
 prerelease = false
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # pyflakes
+    "I",      # isort
+    "N",      # pep8-naming
+    "UP",     # pyupgrade
+    "B",      # flake8-bugbear
+    "C4",     # flake8-comprehensions
+    "SIM",    # flake8-simplify
+    "ARG",    # flake8-unused-arguments
+    "PTH",    # flake8-use-pathlib
+]
+ignore = []
+
+[tool.ruff.lint.isort]
+known-first-party = ["pmpl"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
