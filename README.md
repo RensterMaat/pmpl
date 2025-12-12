@@ -291,6 +291,7 @@ This project uses:
 - [uv](https://github.com/astral-sh/uv) for dependency management
 - [ruff](https://github.com/astral-sh/ruff) for linting and formatting
 - [pre-commit](https://pre-commit.com/) for code quality checks
+- [pytest](https://pytest.org/) for testing
 - [semantic-release](https://python-semantic-release.readthedocs.io/) for versioning
 
 ```bash
@@ -304,8 +305,36 @@ uv sync
 # Install pre-commit hooks
 uv run pre-commit install
 
-# Run tests (example notebook)
+# Run tests
+uv run pytest
+
+# Run tests with coverage
+uv run pytest --cov=pmpl --cov-report=term-missing
+
+# Run example notebook
 jupyter lab examples/test_pmpl.ipynb
+
+# Generate example images
+uv run python generate_examples.py
+```
+
+### Running Tests
+
+The test suite covers:
+- Style definitions and registry
+- Context managers and style application
+- Axis formatters and their options
+- Error handling for invalid inputs
+
+```bash
+# Run all tests
+uv run pytest
+
+# Run with coverage report
+uv run pytest --cov=pmpl
+
+# Run specific test file
+uv run pytest tests/test_formatters.py
 ```
 
 ## Contributing

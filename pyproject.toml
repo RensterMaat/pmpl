@@ -49,6 +49,8 @@ dev = [
     "jupyter>=1.1.1",
     "numpy>=1.26.0",
     "pre-commit>=4.5.0",
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
     "python-semantic-release>=10.5.2",
     "ruff>=0.14.9",
 ]
@@ -70,6 +72,26 @@ exclude_commit_patterns = []
 [tool.semantic_release.branches.main]
 match = "main"
 prerelease = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--strict-markers",
+    "--strict-config",
+]
+
+[tool.coverage.run]
+source = ["pmpl"]
+omit = ["tests/*"]
+
+[tool.coverage.report]
+precision = 2
+show_missing = true
+skip_covered = false
 
 [tool.ruff]
 line-length = 88
