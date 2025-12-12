@@ -1,5 +1,12 @@
 # pmpl - Pretty Matplotlib
 
+[![Tests](https://github.com/RensterMaat/pmpl/workflows/Tests/badge.svg)](https://github.com/RensterMaat/pmpl/actions/workflows/test.yml)
+[![Documentation](https://github.com/RensterMaat/pmpl/workflows/Documentation/badge.svg)](https://github.com/RensterMaat/pmpl/actions/workflows/docs.yml)
+[![codecov](https://codecov.io/gh/RensterMaat/pmpl/branch/main/graph/badge.svg)](https://codecov.io/gh/RensterMaat/pmpl)
+[![PyPI version](https://badge.fury.io/py/pmpl.svg)](https://badge.fury.io/py/pmpl)
+[![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 **Create presentation-ready plots with minimal effort.**
 
 `pmpl` (Pretty Matplotlib) is a Python library that provides clean, consistent styling for matplotlib plots. Perfect for creating client-ready visualizations in Jupyter notebooks with just a few lines of code.
