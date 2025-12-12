@@ -12,8 +12,12 @@ dependencies = [
     "matplotlib>=3.10.8",
 ]
 
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
 [dependency-groups]
 dev = [
+    "hatchling>=1.28.0",
     "python-semantic-release>=10.5.2",
 ]
 
