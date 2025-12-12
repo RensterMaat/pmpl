@@ -1,6 +1,19 @@
 # CHANGELOG
 
 
+## v0.1.1 (2025-12-12)
+
+### Bug Fixes
+
+- Configure Read the Docs to use docs optional dependencies
+  ([`875d2b1`](https://github.com/RensterMaat/pmpl/commit/875d2b13147ff09d107cd03e7a4660dda3789661))
+
+### Documentation
+
+- Add Read the Docs configuration and update documentation links
+  ([`422f312`](https://github.com/RensterMaat/pmpl/commit/422f312e4c36c15e75433ac49b69c0c3e0f3ae5d))
+
+
 ## v0.1.0 (2025-12-12)
 
 ### Bug Fixes
